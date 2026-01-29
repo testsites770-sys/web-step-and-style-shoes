@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צעד וסטייל | חנות הנעליים שלך</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Heebo for Hebrew -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-8">
+                    <h1 class="text-2xl font-black text-blue-600">צעד & וסטייל</h1>
+                    <div class="hidden md:flex gap-6">
+                        <a href="#" class="hover:text-blue-600 transition">בית</a>
+                        <a href="#products" class="hover:text-blue-600 transition">קולקציה</a>
+                        <a href="#" class="hover:text-blue-600 transition">גברים</a>
+                        <a href="#" class="hover:text-blue-600 transition">נשים</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative cursor-pointer" id="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </div>
+                    <button class="md:hidden" id="mobile-menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-blue-900 h-[500px] flex items-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Shoes Hero" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+            <h2 class="text-5xl font-extrabold mb-4">הצעד הבא שלך מתחיל כאן</h2>
+            <p class="text-xl mb-8 max-w-lg">גלו את קולקציית 2024 החדשה. נוחות מקסימלית, עיצוב ללא פשרות ואיכות שמחזיקה מעמד.</p>
+            <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold text-lg transition duration-300 inline-block">קנה עכשיו</a>
+        </div>
+    </header>
+
+    <!-- Products Grid -->
+    <main id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h3 class="text-3xl font-bold mb-10 text-center">הנבחרים שלנו</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden product-card group">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nike" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm">חדש</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">סניקרס Urban Air</h4>
+                    <p class="text-gray-600 mb-4">נעליים קלות משקל המתאימות ליומיום ולפעילות גופנית.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black text-blue-600">₪450</span>
+                        <button onclick="addToCart('סניקרס Urban Air')" class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">הוסף לסל</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden product-card group">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Style" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">דגם Classic White</h4>
+                    <p class="text-gray-600 mb-4">המראה הקלאסי שתמיד באופנה. עור איכותי ונוחות מנצחת.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black text-blue-600">₪390</span>
+                        <button onclick="addToCart('דגם Classic White')" class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">הוסף לסל</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden product-card group">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sport" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm">מבצע</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">נעלי ריצה Pro-Run</h4>
+                    <p class="text-gray-600 mb-4">טכנולוגיית בלימת זעזועים מתקדמת לרצים מקצועיים.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black text-blue-600">₪520</span>
+                        <button onclick="addToCart('נעלי ריצה Pro-Run')" class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">הוסף לסל</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right">
+            <div>
+                <h5 class="text-xl font-bold mb-4">צעד & וסטייל</h5>
+                <p class="text-gray-400">חנות הנעליים המובילה בישראל מאז 2010. איכות, שירות וסטייל תחת קורת גג אחת.</p>
+            </div>
+            <div>
+                <h5 class="text-xl font-bold mb-4">קישורים מהירים</h5>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white transition">מדיניות משלוחים</a></li>
+                    <li><a href="#" class="hover:text-white transition">החזרות והחלפות</a></li>
+                    <li><a href="#" class="hover:text-white transition">צרו קשר</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xl font-bold mb-4">הרשמו לניוזלטר</h5>
+                <div class="flex">
+                    <input type="email" placeholder="האימייל שלך" class="bg-gray-800 text-white px-4 py-2 rounded-r-lg focus:outline-none w-full">
+                    <button class="bg-blue-600 px-4 py-2 rounded-l-lg hover:bg-blue-700 transition">שלח</button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2024 צעד וסטייל בע"מ. כל הזכויות שמורות.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
